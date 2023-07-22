@@ -22,5 +22,7 @@
     		--password root1234 \
     		--table VOLS \
     		--export-dir /VOLS/vols.txt
+		--input-fields-terminated-by','
+		--input-lines-terminated-by '\n'
 
 
