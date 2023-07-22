@@ -5,7 +5,8 @@
     		--username root \
     		--password root1234 \
     		--table VOLS \
-    		--target-dir /VOLS
+    		--target-dir /VOLS \
+		--num-mappers 1
 
 ********************************************************************************************************************************
 2- Créez un fichier nommé vols.txt, ajouter 3 vols, puis charger le fichier dans HDFS puis l’exportez vers la table VOLS avec scoop:
