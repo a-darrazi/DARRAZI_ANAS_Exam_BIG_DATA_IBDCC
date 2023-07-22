@@ -1,0 +1,25 @@
+1- Importez les données de la table VOLS dans HDFS en utilisant SQOOP:
+	
+	=>	sqoop import \
+    		--connect jdbc:mysql://localhost:3306/DB_AEROPORT \
+    		--username root \
+    		--password root1234 \
+    		--table VOLS \
+    		--target-dir /VOLS
+
+********************************************************************************************************************************
+2- Créez un fichier nommé vols.txt, ajouter 3 vols, puis charger le fichier dans HDFS puis l’exportez vers la table VOLS avec scoop:
+
+
+	=>	Supposons que nous avons déjà créé le fichier vols.txt et qu'il contient les données souhaitées.
+	=>	Utilisez la commande Hadoop suivante pour charger le fichier dans HDFS : hadoop fs -put vols.txt /VOLS
+	=>	l’exportez vers la table VOLS avec scoop:
+
+	=>	sqoop export \
+    		--connect jdbc:mysql://localhost:3306/DB_AEROPORT \
+    		--username root \
+    		--password root1234 \
+    		--table VOLS \
+    		--export-dir /VOLS/vols.txt
+
+
